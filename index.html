@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+    <html lang="ja">
+        <body>
+            <iframe title="sparebeat" id="sparebeat" referrerpolicy="no-referrer-when-downgrade" class="jss150" width="960" height="640" frameborder="0" src="https://sparebeat.com/embed/">
+            </iframe>
+
+            <script src="https://sparebeat.com/embed/client.js">
+            </script>
+
+            <script>
+                    Sparebeat.autoload();
+                    window.addEventListener('load', function() {
+                    document.getElementById('sparebeat').height = window.outerWidth < 990 ? 1280 : 640;
+                });
+            </script>
+        </body>
+    </html>
