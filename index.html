@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-
-    <html lang="ja">
-        <body>
-            <iframe title="sparebeat" id="sparebeat" referrerpolicy="no-referrer-when-downgrade" class="jss150" width="960" height="640" frameborder="0" src="https://sparebeat.com/embed/">
-            </iframe>
-
-            <script src="https://sparebeat.com/embed/client.js">
-            </script>
-
-            <script>
-                    Sparebeat.autoload();
-                    window.addEventListener('load', function() {
-                    document.getElementById('sparebeat').height = window.outerWidth < 990 ? 1280 : 640;
-                });
-            </script>
-        </body>
-    </html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script>
+    <script src="https://sparebeat.com/embed/client.js"></script>
+  </head>
+  <body style="text-align: center;">
+    <iframe id="sparebeat" width="960" height="640" src="https://sparebeat.com/embed/" frameborder="0"></iframe>
+    <iframe title="timeline" id="timeline" width="960" height="400" src="" frameborder="0"></iframe>
+    <script>
+      Sparebeat.autoload();
+      var hash = md5(location.origin + "/");
+      var timelineURL = "https://sparebeat.com/embed/timeline/" + hash;
+      document.getElementById('timeline').src = timelineURL;
+    </script>
+  </body>
+</html>
